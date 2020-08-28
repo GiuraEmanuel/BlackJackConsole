@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BlackJack.BL
+namespace BlackJackConsole
 {
-    class Dealer
+    class Dealer : Deck
     {
         #region Properties
+        public List<Card> Hand { get; set; }
         public int CurrentHandScore { get; set; }
         #endregion
         #region Methods
@@ -15,7 +16,11 @@ namespace BlackJack.BL
         /// </summary>
         public void Hit()
         {
-            
+            if (CurrentHandScore <= 17)
+            {
+                DrawCard();
+                //figure out how to add cards to the Hand property
+            }
         }
 
         /// <summary>
@@ -24,13 +29,12 @@ namespace BlackJack.BL
         /// </summary>
         public void DealCards()
         {
-
+            DrawCard();
         }
 
         /// <summary>
         /// Shuffles the cards after half of them have been played
         /// adding them back into the collection    
-        /// have been played
         /// </summary>
         public void ShuffleCards()
         {

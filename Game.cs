@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BlackJack.BL
+﻿namespace BlackJackConsole
 {
     class Game
     {
@@ -11,7 +7,9 @@ namespace BlackJack.BL
             Deck deck = new Deck();
             deck.ShuffleDeck();
             Player p = new Player("Emanuel", 1000);
+            p.PlaceBet(250);
             p.Hit();
+            System.Console.WriteLine(p.Hand);
         }
 
         #region Methods

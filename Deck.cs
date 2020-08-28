@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BlackJack.BL
+namespace BlackJackConsole
 {
     class Deck
     {
@@ -28,11 +28,11 @@ namespace BlackJack.BL
         public void PrintDeck()
         {
             var numberOfCards = deck.Count;
-            Console.WriteLine("List size: {0}",numberOfCards);
+            Console.WriteLine("List size: {0}", numberOfCards);
             Console.WriteLine();
             foreach (var card in deck)
             {
-                Console.WriteLine(/*"Card " + */card.value + /* + " Suit " + */" " +  card.suit);
+                Console.WriteLine(/*"Card " + */card.value + /* + " Suit " + */" " + card.suit);
             }
         }
         /// <summary>
@@ -50,8 +50,8 @@ namespace BlackJack.BL
             }
         }
         /// <summary>
-        /// draw a card from the list(top of the list)
-        /// return the drawn card
+        /// draws a card from the list(top of the list)
+        /// and returns the drawn card
         /// </summary>
         /// <returns></returns>
         public Card DrawCard()

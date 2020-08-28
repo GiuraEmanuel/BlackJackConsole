@@ -1,28 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace BlackJack.BL
+namespace BlackJackConsole
 {
-    public enum Chips
-    {
-        whiteChip = 1,
-        redChip = 5,
-        greenChip = 25,
-        blueChip = 50,
-        blackChip = 100,
-        purpleChip = 500,
-        yellowChip = 1000
-    }
     class Player : Deck
     {
-        #region Properties
-        public List<Card> Hand { get; set; } //a list containing drawn cards by the player
         public Player(string name, int balance)
         {
             Name = name;
-            Balance = balance; //figure how to set up the starting balance(the money player starts with)
+            Balance = balance; 
         }
+        #region Properties
+        public List<Card> Hand { get; set; } //a list containing the first 2 dealt cards by the dealer + the drawn cards by the player
         public string Name { get; set; }
         public int Balance { get; set; }
         public int CurrentHandScore { get; set; }
@@ -34,9 +22,9 @@ namespace BlackJack.BL
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public int UpdatePlayerBalance(int value)
+        public int UpdatePlayerBalance()
         {
-            return 0;
+            return Balance;
         }
 
         /// <summary>
@@ -45,9 +33,10 @@ namespace BlackJack.BL
         /// </summary>
         /// <param name="bet"></param>
         /// <returns></returns>
-        public void PlaceBet(int bet) //method incomplete
+        public int PlaceBet(int bet) //incomplete method
         {
-            Balance -= bet; 
+            Balance -= bet;
+            return bet;
         }
 
         /// <summary>
@@ -55,8 +44,7 @@ namespace BlackJack.BL
         /// </summary>
         public void Hit()
         {
-            DrawCard();
-            //Hand.Add(); ?? figure out how add the drawn card to the Hand property
+            Hand.Add(DrawCard());
         }
 
         /// <summary>
@@ -83,7 +71,7 @@ namespace BlackJack.BL
         /// </summary>
         public void DoubleDown()
         {
-            
+
         }
 
         /// <summary>
@@ -91,7 +79,7 @@ namespace BlackJack.BL
         /// </summary>
         public void Surrender()
         {
-            
+
         }
 
         /// <summary>
@@ -102,7 +90,7 @@ namespace BlackJack.BL
         /// </summary>
         public void PlaceInsurance()
         {
-             
+
         }
         #endregion
     }

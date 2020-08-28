@@ -1,4 +1,4 @@
-﻿namespace BlackJack.BL
+﻿namespace BlackJackConsole
 {
     class Card
     {
@@ -11,9 +11,5 @@
             suit = sui;
         }
 
-        public override string ToString()
-        {
-            return value + " " + suit;
-        }
     }
 }
