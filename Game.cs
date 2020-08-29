@@ -9,7 +9,6 @@
             Player p = new Player("Emanuel", 1000);
             p.PlaceBet(250);
             p.Hit();
-            System.Console.WriteLine(p.Hand);
         }
 
         #region Methods

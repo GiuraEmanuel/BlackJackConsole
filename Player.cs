@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using System;
 namespace BlackJackConsole
 {
     class Player : Deck
@@ -7,10 +7,11 @@ namespace BlackJackConsole
         public Player(string name, int balance)
         {
             Name = name;
+            //Hand = new List<Card>();
             Balance = balance; 
         }
         #region Properties
-        public List<Card> Hand { get; set; } //a list containing the first 2 dealt cards by the dealer + the drawn cards by the player
+        public List<Card> Hand { get; set; } = new List<Card>(); //a list containing the first 2 dealt cards by the dealer + the drawn cards by the player
         public string Name { get; set; }
         public int Balance { get; set; }
         public int CurrentHandScore { get; set; }
@@ -45,6 +46,7 @@ namespace BlackJackConsole
         public void Hit()
         {
             Hand.Add(DrawCard());
+            Console.WriteLine("Number of cards in the list: " + Hand.Count);
         }
 
         /// <summary>

@@ -58,12 +58,12 @@ namespace BlackJackConsole
         {
             Card topCard = deck[0];
             deck.RemoveAt(0);
-            var count = 0;
-            foreach (var card in deck)
-            {
-                count++;
-            }
-            Console.WriteLine("List size after drawing the top card: {0}", count);
+            //var count = 0;
+            //foreach (var card in deck)
+            //{
+            //    count++;
+            //}
+            //Console.WriteLine("List size after drawing the top card: {0}", count);
             return topCard; // figure out how to return the top card in the specified format (value - suit)
         }
     }

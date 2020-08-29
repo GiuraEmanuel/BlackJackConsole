@@ -1,4 +1,5 @@
-﻿namespace BlackJackConsole
+﻿using System;
+namespace BlackJackConsole
 {
     class Card
     {
@@ -10,6 +11,5 @@
             value = val;
             suit = sui;
         }
-
     }
 }
