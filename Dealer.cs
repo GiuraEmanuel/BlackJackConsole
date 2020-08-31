@@ -7,8 +7,8 @@ namespace BlackJackConsole
     class Dealer : Deck
     {
         #region Properties
-        public List<Card> Hand { get; set; }
-        public int CurrentHandScore { get; set; }
+        public List<Card> Hand { get; set; } = new List<Card>();
+        public int DealerHandScore { get; set; }
         #endregion
         #region Methods
         /// <summary>
@@ -16,10 +16,9 @@ namespace BlackJackConsole
         /// </summary>
         public void Hit()
         {
-            if (CurrentHandScore <= 17)
+            if (DealerHandScore <= 17)
             {
-                DrawCard();
-                //figure out how to add cards to the Hand property
+                Hand.Add(DrawCard());
             }
         }
 
@@ -29,16 +28,17 @@ namespace BlackJackConsole
         /// </summary>
         public void DealCards()
         {
-            DrawCard();
+           
         }
 
         /// <summary>
         /// Shuffles the cards after half of them have been played
-        /// adding them back into the collection    
+        /// adding them back into the collection
+        /// only at the end of a round
         /// </summary>
         public void ShuffleCards()
         {
-
+            ShuffleDeck();
         }
         #endregion
     }

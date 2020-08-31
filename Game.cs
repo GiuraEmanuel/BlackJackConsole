@@ -1,14 +1,20 @@
-﻿namespace BlackJackConsole
+﻿using System;
+namespace BlackJackConsole
 {
     class Game
     {
         static void Main(string[] args)
         {
             Deck deck = new Deck();
-            deck.ShuffleDeck();
-            Player p = new Player("Emanuel", 1000);
-            p.PlaceBet(250);
-            p.Hit();
+            //deck.ShuffleDeck();
+            //Player p = new Player("Emanuel", 1000);
+            //p.PlaceBet(250);
+            //p.Hit();
+            Dealer d = new Dealer();
+            //d.Hit();
+            //Console.WriteLine(d.Hand.Count);
+            d.PrintDeck();
+            
         }
 
         #region Methods

@@ -14,7 +14,7 @@ namespace BlackJackConsole
         public List<Card> Hand { get; set; } = new List<Card>(); //a list containing the first 2 dealt cards by the dealer + the drawn cards by the player
         public string Name { get; set; }
         public int Balance { get; set; }
-        public int CurrentHandScore { get; set; }
+        public int PlayerHandScore { get; set; }
         #endregion
         #region Methods
         /// <summary>

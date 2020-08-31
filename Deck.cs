@@ -5,11 +5,11 @@ namespace BlackJackConsole
 {
     class Deck
     {
-        private List<Card> deck = new List<Card>();
+        private static List<Card> deck = new List<Card>();
         public Deck()
         {
             for (int i = 0; i < 4; i++)
-            {
+            {   
                 for (int k = 2; k <= 14; k++)
                 {
                     string suit = "";
