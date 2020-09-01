@@ -14,7 +14,6 @@ namespace BlackJackConsole
             //p.Hit();
             Dealer dealer = new Dealer();
             dealer.Hit();
-            Console.WriteLine(dealer.Hand.Last());
         }
         /// <summary>
         /// checks current round status

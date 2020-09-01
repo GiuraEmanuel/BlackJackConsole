@@ -6,6 +6,10 @@ namespace BlackJackConsole
 {
     class Dealer : Deck
     {
+        public Dealer()
+        {
+            
+        }
         #region Properties
         public List<Card> Hand { get; set; } = new List<Card>();
         public int DealerHandScore { get; set; }
