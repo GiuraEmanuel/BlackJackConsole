@@ -11,5 +11,10 @@ namespace BlackJackConsole
             value = val;
             suit = sui;
         }
+
+        public override string ToString()
+        {
+            return $"{value} of {suit}";
+        }
     }
 }

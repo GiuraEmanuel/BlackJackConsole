@@ -5,11 +5,12 @@ namespace BlackJackConsole
 {
     class Deck
     {
-        private static List<Card> deck = new List<Card>();
-        public Deck()
+        List<Card> deck = new List<Card>();
+        //TODO: FIGURE OUT HOW TO DECREMENT THE LIST COUNT AFTER HITTING
+        public void CreateDeck()
         {
             for (int i = 0; i < 4; i++)
-            {   
+            {
                 for (int k = 2; k <= 14; k++)
                 {
                     string suit = "";
@@ -17,18 +18,24 @@ namespace BlackJackConsole
                     {
                         case 0: suit = "Club"; break;
                         case 1: suit = "Diamond"; break;
-                        case 2: suit = "Spade"; break;
-                        case 3: suit = "Heart"; break;
+                        case 2: suit = "Heart"; break;
+                        case 3: suit = "Spade"; break;
                     }
-                    Card c = new Card(k, suit);
-                    deck.Add(c);
+                    Card card = new Card(k, suit);
+                    deck.Add(card);
                 }
             }
+
+            foreach (var card in deck)
+            {
+                Console.WriteLine(card.value + " " +  card.suit);
+            }
         }
+
         public void PrintDeck()
         {
-            var numberOfCards = deck.Count;
-            Console.WriteLine("List size: {0}", numberOfCards);
+            var deckSize = deck.Count;
+            Console.WriteLine("Deck size: {0}", deckSize);
             Console.WriteLine();
             foreach (var card in deck)
             {
@@ -56,7 +63,7 @@ namespace BlackJackConsole
         /// <returns></returns>
         public Card DrawCard()
         {
-            Card topCard = deck[0];
+            Card topCard = deck[0]; 
             deck.RemoveAt(0);
             //var count = 0;
             //foreach (var card in deck)
@@ -64,6 +71,7 @@ namespace BlackJackConsole
             //    count++;
             //}
             //Console.WriteLine("List size after drawing the top card: {0}", count);
+            Console.WriteLine(deck.Count);
             return topCard; // figure out how to return the top card in the specified format (value - suit)
         }
     }

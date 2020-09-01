@@ -16,10 +16,7 @@ namespace BlackJackConsole
         /// </summary>
         public void Hit()
         {
-            if (DealerHandScore <= 17)
-            {
-                Hand.Add(DrawCard());
-            }
+            Hand.Add(DrawCard()); 
         }
 
         /// <summary>

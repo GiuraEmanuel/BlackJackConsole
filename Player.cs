@@ -46,7 +46,7 @@ namespace BlackJackConsole
         public void Hit()
         {
             Hand.Add(DrawCard());
-            Console.WriteLine("Number of cards in the list: " + Hand.Count);
+            //Console.WriteLine("Number of cards in the list: " + Hand.Count);
         }
 
         /// <summary>
