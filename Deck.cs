@@ -7,7 +7,7 @@ namespace BlackJackConsole
     {
         List<Card> deck = new List<Card>();
         //TODO: FIGURE OUT HOW TO DECREMENT THE LIST COUNT AFTER HITTING
-        public void CreateDeck()
+        private void CreateDeck()
         {
             for (int i = 0; i < 4; i++)
             {

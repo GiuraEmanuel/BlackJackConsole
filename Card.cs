@@ -3,18 +3,26 @@ namespace BlackJackConsole
 {
     class Card
     {
-        public int value;
-        public string suit;
+        public int Value { get;}
+        public CardSuit Suit { get;}
 
-        public Card(int val, string sui)
+        public Card(int value, CardSuit suit)
         {
-            value = val;
-            suit = sui;
+            Value = value;
+            Suit = suit;
         }
 
         public override string ToString()
         {
-            return $"{value} of {suit}";
+            return  $"Card {Value}";
         }
+    }
+
+    enum CardSuit
+    {
+        Club,
+        Diamond,
+        Spade,
+        Heart
     }
 }
